@@ -1,0 +1,32 @@
+{
+  "name": "market-basket-analysis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon -r esm server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjteoh-pingspace/market-basket-analysis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jjteoh-pingspace/market-basket-analysis/issues"
+  },
+  "homepage": "https://github.com/jjteoh-pingspace/market-basket-analysis#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "knex": "^0.20.4",
+    "nodemon": "^2.0.6",
+    "objection": "^2.0.7",
+    "objection-soft-delete": "^1.0.7",
+    "pg": "^7.14.0",
+    "utf-8-validate": "^5.0.2"
+  }
+}
