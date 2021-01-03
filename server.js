@@ -2,6 +2,7 @@ import express, { json, urlencoded } from "express";
 import http from "http";
 import * as apriori from "./controllers/apriori";
 import * as fpGrowth from "./controllers/fp-growth";
+import * as trans from "./controllers/transaction";
 import cors from "cors";
 
 const app = express();
@@ -19,8 +20,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.post("/model/apriori/train", apriori.train);
-app.post("/model/fp-growth/train", fpGrowth.train);
+app.get("/seed", trans.seedData);
+
+app.get("/apriori/train", apriori.train);
+app.get("/apriori/frequent-set", apriori.getFrequentSet);
+app.get("/apriori/confidences", apriori.getConfidences);
+
+app.post("/fp-growth/train", fpGrowth.train);
 
 const server = http.createServer(app);
 

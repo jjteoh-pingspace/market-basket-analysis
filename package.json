@@ -5,7 +5,11 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon -r esm server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "knex": "babel-node node_modules/knex/bin/cli.js",
+    "seed": "npm run knex seed:run",
+    "migrate": "npm run knex migrate:latest",
+    "rollback": "npm run knex migrate:rollback"
   },
   "repository": {
     "type": "git",
@@ -28,5 +32,13 @@
     "objection-soft-delete": "^1.0.7",
     "pg": "^7.14.0",
     "utf-8-validate": "^5.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-syntax-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.7.6"
   }
 }
